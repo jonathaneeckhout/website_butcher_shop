@@ -19,13 +19,23 @@ if( $user->is_logged_in() ){ header('Location: index.php'); }
         <?php
         //process login form if submitted
         if(isset($_POST['submit'])){
+            $apc_key = "{$_SERVER['SERVER_NAME']}~login:{$_SERVER['REMOTE_ADDR']}";
+            $tries = (int)apc_fetch($apc_key);
+            echo $tries;
+            if ($tries >= 3) {
+                header("HTTP/1.1 429 Too Many Requests");
+                echo "You've exceeded the number of login attempts. We've blocked IP address {$_SERVER['REMOTE_ADDR']} for a few minutes.";
+                exit();
+            }
             $username = trim($_POST['username']);
             $password = trim($_POST['password']);
             if($user->login($username,$password)){
                 //logged in return to index page
+                apc_delete($apc_key);
                 header('Location: index.php');
                 exit;
             } else {
+                apcu_store($apc_key, $tries+1, 600);
                 $message = '<p class="error">Wrong username or password</p>';
             }
         }//end if submit
