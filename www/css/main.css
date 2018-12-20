@@ -17,48 +17,57 @@ body {
 }
 
 header {
-    height: 150px;
     background-image: url("../images/beef-chilies-close-up-65175.jpg");
-    width: 100%;
-    background-position: -300px -300px;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding-left: 100px;
 }
 
-.homeLink {
-    float: left;
-    margin-left: 100px;
-    margin-top: 30px;
-    padding: 14px 16px;
-}
-.homeLink a {
-    text-decoration: none;
-    color: #FFC115;
-    font-size: 30px;
+header h1 {
+    padding-top: 40px;
+    color: #ffc21a;
+    font-size: 60px;
     font-weight: bold;
 }
 
-.homeLink p {
+header p {
     color: white;
-    font-size: 20px;
+    font-size: 30px;
 }
 
+/* Add a black background color to the top navigation */
 .topNav {
-    text-align: right;
-    width: 100%;
-    height: 20px;
+    background-color: #ff6a31;;
+    overflow: hidden;
+    padding-right: 10px;
 }
 
-.topNav  li {
-    margin-top: 50px;
+/* Style the links inside the navigation bar */
+.topNav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 32px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-.topNav li a:hover,
-.topNav li a:focus {
-  text-decoration: underline;
+/* Change the color of links on hover */
+.topNav a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
-.topNav > li > a {
-    color: white;
-    padding: 28px 16px;
-    text-decoration: none;
-    font-size: 20px;
+/* Add a color to the active/current link */
+.topNav a.active {
+  background-color:  #e64100;
+  color: white;
+}
+
+/* Right-aligned section inside the top navigation */
+.topNavRight {
+  float: right;
 }
