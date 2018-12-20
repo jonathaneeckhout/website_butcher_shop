@@ -25,9 +25,17 @@ header {
     position: relative;
 }
 
+footer {
+text-align: center;
+margin-top: 50px;
+padding: 10px 0 10px 0;
+background-color: #ff6a31;
+color: white;
+}
+
 .topNav {
     overflow: hidden;
-    padding-top: 40px;
+    padding-top: 15px;
 }
 
 .topNav a {
@@ -72,4 +80,65 @@ header {
 .headerLine {
     height: 5px;
     background-color: #ff6a31;
+}
+
+.wrapper {
+    width : 80%;
+    margin: 0 auto;
+
+}
+
+.indexWrapper {
+    width: inherit;
+    display: flex;
+}
+
+.indexMainNews {
+    flex: 10;
+    display: flex;
+    flex-direction : row;
+}
+
+.indexSideBar {
+    flex: 4;
+    display: flex;
+    flex-direction : row;
+}
+
+.news {
+    background-color: #e6e6e6;
+    width: 100%;
+    margin: 50px 50px 0px 50px;
+}
+
+.news h2 {
+    background-color: #ff6a31;
+    padding: 10px 10px 10px 10px;
+    color: white;
+    font-style: italic;
+    font-size: 24px;
+}
+
+#newsDate {
+    padding: 10px 10px 10px 10px;
+    color: #8d8887;
+    font-weight: bold;
+}
+
+.news img {
+    padding: 10px 10px 10px 10px;
+    width: 95%;
+}
+
+#newsText {
+    padding: 10px 10px 10px 10px;
+    font-size: 18px;
+    color: #242424;
+}
+
+.news a {
+    padding: 10px 10px 10px 10px;
+    /* text-decoration: none; */
+    color:  #8d8887;
+    font-size: 20px;
 }
