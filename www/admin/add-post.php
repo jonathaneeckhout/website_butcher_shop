@@ -20,7 +20,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
             "searchreplace visualblocks code fullscreen",
             "insertdatetime media table contextmenu paste"
         ],
-        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent"
     });
     </script>
 </head>
@@ -48,12 +48,13 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
             if(!isset($error)){
                 try {
                     //insert into database
-                    $stmt = $db->prepare('INSERT INTO butcher_shop_posts (postTitle,postDesc,postCont,postDate) VALUES (:postTitle, :postDesc, :postCont, :postDate)') ;
+                    $stmt = $db->prepare('INSERT INTO butcher_shop_posts (postTitle,postDesc,postCont,postDate,postImage) VALUES (:postTitle, :postDesc, :postCont, :postDate, :postImage)') ;
                     $stmt->execute(array(
                         ':postTitle' => $postTitle,
                         ':postDesc' => $postDesc,
                         ':postCont' => $postCont,
-                        ':postDate' => date('Y-m-d H:i:s')
+                        ':postDate' => date('Y-m-d H:i:s'),
+                        ':postImage' => $postImage,
                     ));
                     //redirect to index page
                     header('Location: index.php?action=added');
@@ -82,6 +83,10 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
             </p>
             <p><label>Content</label><br />
                 <textarea name='postCont' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['postCont'];}?></textarea>
+            </p>
+            <p>
+                <label>Image</label><br />
+                Select Image<input type='text' name='postImage' value='<?php if(isset($error)){ echo $_POST['postImage'];}?>'>
             </p>
             <p><input type='submit' name='submit' value='Submit'></p>
         </form>

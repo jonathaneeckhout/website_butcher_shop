@@ -23,8 +23,7 @@
                 <a href="#services">Services</a>
                 <a href="#products">Products</a>
                 <a href="#specials">Specials</a>
-                <a href="#cart">Cart</a>
-                <a href="#login">Login</a>
+                <a href="admin/index.php">Login</a>
             </div>
         </div>
     </header>
