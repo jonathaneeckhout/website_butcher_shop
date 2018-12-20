@@ -141,7 +141,7 @@ color: white;
     font-size: 20px;
 }
 
-.indexSideBar .search-container {
+.indexSideBar .searchContainer {
     background-color: #e6e6e6;
     margin: 50px 0 0 0;
     float: right;
@@ -154,7 +154,7 @@ color: white;
     width: 80%;
 }
 
-.indexSideBar .search-container button {
+.indexSideBar .searchContainer button {
   float: right;
   width: 10%;
   padding: 6px 10px;
@@ -162,4 +162,21 @@ color: white;
   font-size: 17px;
   border: none;
   cursor: pointer;
+}
+
+.newsTopics {
+    margin: 50px 0 0 0;
+    background-color: #e6e6e6;
+}
+
+.newsTopics h2 {
+    background-color: #242424;
+    padding: 10px 10px 10px 10px;
+    color: white;
+    font-style: italic;
+    font-size: 17px;
+}
+
+.newsTopics p {
+    padding: 6px 10px;
 }
