@@ -23,7 +23,7 @@ if( $user->is_logged_in() ){ header('Location: index.php'); }
             $tries = (int)apc_fetch($apc_key);
             if ($tries >= 3) {
                 header("HTTP/1.1 429 Too Many Requests");
-                echo "You've exceeded the number of login attempts. We've blocked IP address {$_SERVER['REMOTE_ADDR']} for a few minutes.";
+                echo "You've exceeded the number of login attempts. Please try again in a few minutes.";
                 exit();
             }
             $username = trim($_POST['username']);
