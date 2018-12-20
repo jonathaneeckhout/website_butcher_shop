@@ -118,7 +118,7 @@ color: white;
     font-size: 24px;
 }
 
-#newsDate {
+.newsDate {
     padding: 10px 10px 10px 10px;
     color: #8d8887;
     font-weight: bold;
@@ -129,7 +129,7 @@ color: white;
     width: 95%;
 }
 
-#newsText {
+.newsText {
     padding: 10px 10px 10px 10px;
     font-size: 18px;
     color: #242424;

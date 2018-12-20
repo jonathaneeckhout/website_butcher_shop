@@ -1,3 +1,4 @@
+<?php require('includes/config.php'); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -32,16 +33,22 @@
     <div class="wrapper">
         <div class="indexWrapper">
             <div class="indexMainNews">
-                <div class="news">
-                    <h2>Buy 1kg of steak and get 200g for free!</h2>
-                    <p id="newsDate">December 20,2018</p>
-                    <img src="images/beef-chopping-board-fillet-618775.jpg" alt="">
-                    <p id="newsText">
-                        If you buy 1kg of steak you get 200g extra for free.
-                        Don't miss it! <br>
-                        This special is valid from 20/12/2018 until 31/12/2018
-                    </p>
-                    <a href="#specials">Do not miss out our other specials!</a>
+                <div id="newsBlog">
+                    <?php
+                    try {
+                        $stmt = $db->query('SELECT postID, postTitle, postDesc, postCont, postDate, postImage FROM butcher_shop_posts ORDER BY postID DESC');
+                        while($row = $stmt->fetch()){
+                            echo '<div class=news>';
+                            echo '<h2>'.$row['postTitle'].'</h2>';
+                            echo '<p class="newsDate">Posted on '.date('jS M Y H:i:s', strtotime($row['postDate'])).'</p>';
+                            echo '<img src="images/'.$row['postImage'].'" alt="">';
+                            echo '<p class="newsText">'.$row['postCont'].'</p>';
+                            echo '</div>';
+                        }
+                    } catch(PDOException $e) {
+                        echo $e->getMessage();
+                    }
+                    ?>
                 </div>
             </div>
             <div class="indexSideBar">
@@ -70,5 +77,7 @@
             © 2018 Jonathan Eeckhout
         </p>
     </footer>
+
+    <!-- <script type = "text/javascript" src = "js/get_posts_index.js" ></script> -->
 </body>
 </html>
