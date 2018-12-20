@@ -96,19 +96,18 @@ color: white;
 .indexMainNews {
     flex: 10;
     display: flex;
-    flex-direction : row;
+    flex-direction : column;
 }
 
 .indexSideBar {
     flex: 4;
     display: flex;
-    flex-direction : row;
+    flex-direction : column;
 }
 
 .news {
     background-color: #e6e6e6;
-    width: 100%;
-    margin: 50px 50px 0px 50px;
+    margin: 50px 25px 0px 25px;
 }
 
 .news h2 {
@@ -138,7 +137,29 @@ color: white;
 
 .news a {
     padding: 10px 10px 10px 10px;
-    /* text-decoration: none; */
     color:  #8d8887;
     font-size: 20px;
+}
+
+.indexSideBar .search-container {
+    background-color: #e6e6e6;
+    margin: 50px 0 0 0;
+    float: right;
+}
+
+.indexSideBar input[type=text] {
+    padding: 6px;
+    font-size: 17px;
+    border: none;
+    width: 80%;
+}
+
+.indexSideBar .search-container button {
+  float: right;
+  width: 10%;
+  padding: 6px 10px;
+  background: #e6e6e6;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
 }
