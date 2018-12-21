@@ -48,33 +48,21 @@
                 </div>
             </div>
             <div class="products">
-                <div class="product">
-                    <h2>Barbecue Sausage </h2>
-                    <img src="../images/barbecue-bbq-cooking-929137.resized.jpg" alt="bbq Sausage">
-                    <p>Delicious barbecue sausages. Perfect for your summer barbecue. Straight from our local farmer</p>
-                    <p id="productPrice">11 euro/kg</p>
-                </div>
-                <div class="product">
-                    <h2>Smoked bacon </h2>
-                    <img src="../images/bacon.jpeg" alt="smoked bacon">
-                    <p>Freshly smoked bacon. Smoked with pine wood. Best food to start your day</p>
-                    <p id="productPrice">9 euro/kg</p>
-
-                </div>
-                <div class="product">
-                    <h2>Mixed minced meat </h2>
-                    <img src="../images/mincedmeat.jpg" alt="bbq Sausage">
-                    <p>50% Pork and 50% beef. This minced meat makes your dish extra delicious!</p>
-                    <p id="productPrice">8 euro/kg</p>
-
-                </div>
-                <div class="product">
-                    <h2>Roasted chicken </h2>
-                    <img src="../images/calories-chicken-chopping-board-616353.png" alt="bbq Sausage">
-                    <p>Home made roasted chicken.</p>
-                    <p id="productPrice">13 euro/kg</p>
-                </div>
-
+                <?php
+                try {
+                    $stmt = $db->query('SELECT productID, productTitle, productType, productMeatType, productImage, productDesc, productCont, productPrice, productPriceUnit FROM butcher_shop_products ORDER BY productID DESC');
+                    while($row = $stmt->fetch()){
+                        echo '<div class=product>';
+                        echo '<h2>'.$row['productTitle'].'</h2>';
+                        echo '<img src="../images/'.$row['productImage'].'" alt="">';
+                        echo '<p>'.$row['productCont'].'</p>';
+                        echo '<p id="productPrice">'.$row['productPrice'].' '.$row['productPriceUnit'].'</p>';
+                        echo '</div>';
+                    }
+                } catch(PDOException $e) {
+                    echo $e->getMessage();
+                }
+                ?>
             </div>
         </div>
     </div>
