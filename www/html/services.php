@@ -52,10 +52,10 @@
                     $stmt = $db->query('SELECT serviceID, serviceTitle, serviceType, serviceImage, serviceDesc, serviceCont, servicePrice, servicePriceUnit FROM butcher_shop_services ORDER BY serviceID DESC');
                     while($row = $stmt->fetch()){
                         echo '<div class=product>';
-                        echo '<h2>'.$row['productTitle'].'</h2>';
-                        echo '<img src="../images/'.$row['productImage'].'" alt="">';
-                        echo '<p>'.$row['productCont'].'</p>';
-                        echo '<p id="productPrice">'.$row['productPrice'].' '.$row['productPriceUnit'].'</p>';
+                        echo '<h2>'.$row['serviceTitle'].'</h2>';
+                        echo '<img src="../images/'.$row['serviceImage'].'" alt="">';
+                        echo '<p>'.$row['serviceCont'].'</p>';
+                        echo '<p id="productPrice">'.$row['servicePrice'].' '.$row['servicePriceUnit'].'</p>';
                         echo '</div>';
                     }
                 } catch(PDOException $e) {
