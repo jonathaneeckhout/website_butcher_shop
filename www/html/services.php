@@ -38,18 +38,18 @@
                     </form>
                 </div>
                 <div class="selection">
-                    <h2>Filter products</h2>
+                    <h2>Filter services</h2>
                     <form>
-                        <input type="checkbox" name="cow" value="cowMeat"> Cow meat<br>
-                        <input type="checkbox" name="chicken" value="chickenMeat"> Chicken meat<br>
-                        <input type="checkbox" name="pork" value="porkMeat"> Pork meat<br>
+                        <input type="checkbox" name="bbq" value="bbq"> BBQ<br>
+                        <input type="checkbox" name="gourmet" value="gourmet"> Groumet<br>
+                        <input type="checkbox" name="buffet" value="buffet"> Buffet<br>
                     </form>
                 </div>
             </div>
             <div class="products">
                 <?php
                 try {
-                    $stmt = $db->query('SELECT productID, productTitle, productType, productMeatType, productImage, productDesc, productCont, productPrice, productPriceUnit FROM butcher_shop_products ORDER BY productID DESC');
+                    $stmt = $db->query('SELECT serviceID, serviceTitle, serviceType, serviceImage, serviceDesc, serviceCont, servicePrice, servicePriceUnit FROM butcher_shop_services ORDER BY serviceID DESC');
                     while($row = $stmt->fetch()){
                         echo '<div class=product>';
                         echo '<h2>'.$row['productTitle'].'</h2>';
