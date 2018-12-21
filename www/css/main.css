@@ -77,6 +77,10 @@ color: white;
     font-size: 30px;
 }
 
+.topNavLeft img {
+    height: 150px;
+}
+
 .headerLine {
     height: 5px;
     background-color: #ff6a31;

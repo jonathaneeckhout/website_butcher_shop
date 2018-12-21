@@ -15,8 +15,7 @@
         <div class="topNav">
             <div class="topNavLeft">
                 <a href="#home">
-                    <h1>Butcher shop</h1>
-                    <p>Best meat in town</p>
+                    <img src="images/butcher_shop_logo.png" alt="logo">
                 </a>
             </div>
             <div class="topNavRight">
