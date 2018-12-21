@@ -19,6 +19,7 @@
                 </a>
             </div>
             <div class="topNavRight">
+                <a href="../index.php">Home</a>
                 <a href="#services">Services</a>
                 <a href="products.php">Products</a>
                 <a href="#specials">Specials</a>
@@ -54,21 +55,26 @@
                     <p id="productPrice">11 euro/kg</p>
                 </div>
                 <div class="product">
-                    <h2>Barbecue Sausage </h2>
-                    <img src="../images/barbecue-bbq-cooking-929137.resized.jpg" alt="bbq Sausage">
-                    <p></p>
+                    <h2>Smoked bacon </h2>
+                    <img src="../images/bacon.jpeg" alt="smoked bacon">
+                    <p>Freshly smoked bacon. Smoked with pine wood. Best food to start your day</p>
+                    <p id="productPrice">9 euro/kg</p>
 
                 </div>
                 <div class="product">
-                    <h2>Barbecue Sausage </h2>
-                    <img src="../images/barbecue-bbq-cooking-929137.resized.jpg" alt="bbq Sausage">
-                    <p></p>
+                    <h2>Mixed minced meat </h2>
+                    <img src="../images/mincedmeat.jpg" alt="bbq Sausage">
+                    <p>50% Pork and 50% beef. This minced meat makes your dish extra delicious!</p>
+                    <p id="productPrice">8 euro/kg</p>
 
                 </div>
                 <div class="product">
-                    <h2>Barbecue Sausage </h2>
-                    <img src="../images/barbecue-bbq-cooking-929137.resized.jpg" alt="bbq Sausage">
+                    <h2>Roasted chicken </h2>
+                    <img src="../images/calories-chicken-chopping-board-616353.png" alt="bbq Sausage">
+                    <p>Home made roasted chicken.</p>
+                    <p id="productPrice">13 euro/kg</p>
                 </div>
+
             </div>
         </div>
     </div>

@@ -223,6 +223,7 @@ color: white;
     width: 30%;
     background-color: #e6e6e6;
     margin: 50px 10px 0px 10px;
+    position: relative;
 }
 
 .product h2 {
@@ -237,21 +238,20 @@ color: white;
     /* padding: 10px 10px 10px 10px; */
     display: block;
     width: 100%;
+    max-height: 400px;
 }
 
 /* Product description */
 .product p {
-    padding: 10px 10px 10px 10px;
+    padding: 10px 10px 40px 10px;
     font-size: 18px;
     color: #242424;
 }
 
 #productPrice {
-    float:right;
     font-weight: bold;
-}
-
-/* Product price */
-.product p:nth-child(2) {
-
+    position: absolute;
+    padding: 10px 10px 10px 10px;
+    bottom:0;
+    right:0;
 }

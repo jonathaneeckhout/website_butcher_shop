@@ -19,6 +19,7 @@
                 </a>
             </div>
             <div class="topNavRight">
+                <a href="index.php">Home</a>
                 <a href="#services">Services</a>
                 <a href="html/products.php">Products</a>
                 <a href="#specials">Specials</a>
