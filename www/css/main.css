@@ -129,8 +129,12 @@ color: white;
 }
 
 .news img {
-    padding: 10px 10px 10px 10px;
-    width: 95%;
+    /* padding: 10px 10px 10px 10px; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 600px;
+    max-width: 95%;
 }
 
 .newsText {
@@ -145,20 +149,20 @@ color: white;
     font-size: 20px;
 }
 
-.indexSideBar .searchContainer {
+.searchContainer {
     background-color: #e6e6e6;
     margin: 50px 0 0 0;
     float: right;
 }
 
-.indexSideBar input[type=text] {
+.searchContainer input[type=text] {
     padding: 6px;
     font-size: 17px;
     border: none;
     width: 80%;
 }
 
-.indexSideBar .searchContainer button {
+.searchContainer button {
   float: right;
   width: 10%;
   padding: 6px 10px;
@@ -183,4 +187,46 @@ color: white;
 
 .newsTopics p {
     padding: 6px 10px;
+}
+
+.productSelection {
+    flex: 4;
+    display: flex;
+    flex-direction : column;
+}
+
+.selection {
+    margin: 50px 0 0 0;
+    background-color: #e6e6e6;
+}
+
+.selection h2 {
+    background-color: #242424;
+    padding: 10px 10px 10px 10px;
+    color: white;
+    font-style: italic;
+    font-size: 17px;
+}
+
+.selection form {
+    padding: 10px 0 0 0;
+}
+
+.products {
+    flex: 10;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.product {
+    width: 30%;
+}
+
+.product img {
+    /* padding: 10px 10px 10px 10px; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 95%;
 }

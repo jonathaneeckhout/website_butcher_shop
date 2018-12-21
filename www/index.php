@@ -14,13 +14,13 @@
     <header>
         <div class="topNav">
             <div class="topNavLeft">
-                <a href="#home">
+                <a href="index.php">
                     <img src="images/butcher_shop_logo.png" alt="logo">
                 </a>
             </div>
             <div class="topNavRight">
                 <a href="#services">Services</a>
-                <a href="#products">Products</a>
+                <a href="html/products.php">Products</a>
                 <a href="#specials">Specials</a>
                 <a href="admin/index.php">Login</a>
             </div>
