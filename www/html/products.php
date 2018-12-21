@@ -50,8 +50,8 @@
                 <div class="product">
                     <h2>Barbecue Sausage </h2>
                     <img src="../images/barbecue-bbq-cooking-929137.resized.jpg" alt="bbq Sausage">
-                    <p></p>
-
+                    <p>Delicious barbecue sausages. Perfect for your summer barbecue. Straight from our local farmer</p>
+                    <p id="productPrice">11 euro/kg</p>
                 </div>
                 <div class="product">
                     <h2>Barbecue Sausage </h2>
@@ -68,8 +68,6 @@
                 <div class="product">
                     <h2>Barbecue Sausage </h2>
                     <img src="../images/barbecue-bbq-cooking-929137.resized.jpg" alt="bbq Sausage">
-                    <p></p>
-
                 </div>
             </div>
         </div>
