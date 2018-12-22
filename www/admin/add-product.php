@@ -106,7 +106,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
             </p>
             <p>
                 <label>Image</label><br />
-                Select Image<input type='text' name='postImage' value='<?php if(isset($error)){ echo $_POST['productImage'];}?>'>
+                Select Image<input type='text' name='productImage' value='<?php if(isset($error)){ echo $_POST['productImage'];}?>'>
             </p>
             <p><label>Description</label><br />
                 <textarea name='productDesc' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['productDesc'];}?></textarea>
