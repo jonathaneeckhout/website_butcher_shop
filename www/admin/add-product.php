@@ -8,7 +8,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Admin - Add Post</title>
+    <title>Admin - Add Productt</title>
     <link rel="stylesheet" href="../style/normalize.css">
     <link rel="stylesheet" href="../style/main.css">
     <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
@@ -28,7 +28,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
     <div id="wrapper">
         <?php include('menu.php');?>
         <p><a href="./">Blog Admin Index</a></p>
-        <h2>Add Post</h2>
+        <h2>Add Product</h2>
         <?php
         //if form has been submitted process it
         if(isset($_POST['submit'])){
@@ -36,28 +36,34 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
             //collect form data
             extract($_POST);
             //very basic validation
-            if($postTitle ==''){
+            if($productTitle ==''){
                 $error[] = 'Please enter the title.';
             }
-            if($postDesc ==''){
+            if($productDesc ==''){
                 $error[] = 'Please enter the description.';
             }
-            if($postCont ==''){
+            if($productCont ==''){
                 $error[] = 'Please enter the content.';
+            }
+            if($productPrice ==''){
+                $error[] = 'Please enter the price.';
             }
             if(!isset($error)){
                 try {
                     //insert into database
-                    $stmt = $db->prepare('INSERT INTO butcher_shop_posts (postTitle,postDesc,postCont,postDate,postImage) VALUES (:postTitle, :postDesc, :postCont, :postDate, :postImage)') ;
+                    $stmt = $db->prepare('INSERT INTO butcher_shop_products (productTitle,productType,productMeatType,productImage,productDesc,productCont,productPrice,productPriceUnit) VALUES (:productTitle, :productType, :productMeatType, :productImage, :productDesc, :productCont, :productPrice, :productPriceUnit)') ;
                     $stmt->execute(array(
-                        ':postTitle' => $postTitle,
-                        ':postDesc' => $postDesc,
-                        ':postCont' => $postCont,
-                        ':postDate' => date('Y-m-d H:i:s'),
-                        ':postImage' => $postImage,
+                        ':productTitle' => $productTitle,
+                        ':productType' => $productType,
+                        ':productMeatType' => $productMeatType,
+                        ':productImage' => $productImage,
+                        ':productDesc' => $productDesc,
+                        ':productCont' => $productCont,
+                        ':productPrice' => $productPrice,
+                        ':productPriceUnit' => $productPriceUnit,
                     ));
                     //redirect to index page
-                    header('Location: index.php?action=added');
+                    header('Location: products.php?action=added');
                     exit;
 
                 } catch(PDOException $e) {
@@ -75,18 +81,50 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
         <form action='' method='post'>
             <p>
                 <label>Title</label><br />
-                <input type='text' name='postTitle' value='<?php if(isset($error)){ echo $_POST['postTitle'];}?>'>
+                <input type='text' name='productTitle' value='<?php if(isset($error)){ echo $_POST['productTitle'];}?>'>
             </p>
-
-            <p><label>Description</label><br />
-                <textarea name='postDesc' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['postDesc'];}?></textarea>
+            <p>
+                <label>Type</label><br />
+                <select name= 'productType'>
+                    <option value='steak' selected="selected">Steak</option>
+                    <option value='sausage'>Sausage</option>
+                    <option value='bacon'>Bacon</option>
+                    <option value='mincedMeat'>Minced Meat</option>
+                    <option value='whole'>Whole</option>
+                    <option value='fillet'>Fillet</option>
+                </select>
             </p>
-            <p><label>Content</label><br />
-                <textarea name='postCont' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['postCont'];}?></textarea>
+            <p>
+                <label>Type of meat</label><br />
+                <select name= 'productMeatType'>
+                    <option value='beef' selected="selected">Beef</option>
+                    <option value='pork'>Pork</option>
+                    <option value='chicken'>Chicken</option>
+                    <option value='lam'>Lam</option>
+                    <option value='mixed'>Mixed</option>
+                </select>
             </p>
             <p>
                 <label>Image</label><br />
-                Select Image<input type='text' name='postImage' value='<?php if(isset($error)){ echo $_POST['postImage'];}?>'>
+                Select Image<input type='text' name='postImage' value='<?php if(isset($error)){ echo $_POST['productImage'];}?>'>
+            </p>
+            <p><label>Description</label><br />
+                <textarea name='productDesc' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['productDesc'];}?></textarea>
+            </p>
+            <p><label>Content</label><br />
+                <textarea name='productCont' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['productCont'];}?></textarea>
+            </p>
+            <p>
+                <label>Price</label><br />
+                <input type='text' name='productPrice' value='<?php if(isset($error)){ echo $_POST['productPrice'];}?>'>
+            </p>
+            <p>
+                <label>Price Unit</label><br />
+                <select name= 'productPriceUnit'>
+                    <option value='euro' selected="selected">euro</option>
+                    <option value='euro/kg'>euro/kg</option>
+                    <option value='euro/piece'>euro/piece</option>
+                </select>
             </p>
             <p><input type='submit' name='submit' value='Submit'></p>
         </form>
