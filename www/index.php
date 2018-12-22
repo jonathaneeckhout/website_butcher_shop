@@ -52,13 +52,26 @@
             <div class="indexSideBar">
                 <div class="newsTopics">
                     <h2>News</h2>
-                    <p>Buy 1kg of steak and get 200g for free!</p>
+                    <ul>
+
+
+                    <?php
+                    try {
+                        $stmt = $db->query('SELECT postID, postTitle FROM butcher_shop_posts ORDER BY postID DESC');
+                        while($row = $stmt->fetch()){
+                            echo '<li>'.$row['postTitle'].'</li>';
+                        }
+                    } catch(PDOException $e) {
+                        echo $e->getMessage();
+                    }
+                    ?>
+                    </ul>
                 </div>
 
-                <div class="newsTopics">
+                <!-- <div class="newsTopics">
                     <h2>Posts</h2>
                     <p>The meat is realy jucy, I am comming back for sure!</p>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

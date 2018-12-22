@@ -188,6 +188,13 @@ color: white;
 .newsTopics p {
     padding: 6px 10px;
 }
+.newsTopics ul {
+    padding: 6px 10px 6px 20px;
+}
+
+.newsTopics ul li{
+    padding: 6px 10px 6px 0px;
+}
 
 .productSelection {
     flex: 4;
