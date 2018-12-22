@@ -50,12 +50,6 @@
                 </div>
             </div>
             <div class="indexSideBar">
-                <div class="searchContainer">
-                    <form action="/action_page.php">
-                        <input type="text" placeholder="Search.." name="search">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
-                </div>
                 <div class="newsTopics">
                     <h2>News</h2>
                     <p>Buy 1kg of steak and get 200g for free!</p>
