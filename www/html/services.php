@@ -49,7 +49,7 @@
             <div class="products">
                 <?php
                 try {
-                    $stmt = $db->query('SELECT serviceID, serviceTitle, serviceType, serviceImage, serviceDesc, serviceCont, servicePrice, servicePriceUnit FROM butcher_shop_services ORDER BY serviceID DESC');
+                    $stmt = $db->query('SELECT serviceID, serviceTitle, serviceType, serviceImage, serviceDesc, serviceCont, servicePrice, servicePriceUnit FROM butcher_shop_services ORDER BY serviceID');
                     while($row = $stmt->fetch()){
                         echo '<div class=product>';
                         echo '<h2>'.$row['serviceTitle'].'</h2>';
