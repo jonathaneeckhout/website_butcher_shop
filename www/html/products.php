@@ -1,4 +1,3 @@
-<?php require('../includes/config.php'); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -49,22 +48,8 @@
                     </form>
                 </div>
             </div>
-            <div class="products">
-                <?php
-                try {
-                    $stmt = $db->query('SELECT productID, productTitle, productType, productMeatType, productImage, productDesc, productCont, productPrice, productPriceUnit FROM butcher_shop_products ORDER BY productID');
-                    while($row = $stmt->fetch()){
-                        echo '<div class=product>';
-                        echo '<h2>'.$row['productTitle'].'</h2>';
-                        echo '<img src="../images/'.$row['productImage'].'" alt="">';
-                        echo '<p>'.$row['productCont'].'</p>';
-                        echo '<p id="productPrice">'.$row['productPrice'].' '.$row['productPriceUnit'].'</p>';
-                        echo '</div>';
-                    }
-                } catch(PDOException $e) {
-                    echo $e->getMessage();
-                }
-                ?>
+            <div class="products" id='myProducts'>
+                 <script src="../js/fetch_products.js"></script>
             </div>
         </div>
     </div>
