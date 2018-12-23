@@ -40,4 +40,6 @@ function removeAllProducts() {
 
 function searchProduct() {
     removeAllProducts();
+    xmlhttp.open("GET", "../php/product_getter.php?method=search&query=chicken", true);
+    xmlhttp.send();
 }
