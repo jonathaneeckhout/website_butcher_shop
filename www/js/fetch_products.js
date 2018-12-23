@@ -28,8 +28,6 @@ xmlhttp.onreadystatechange = function() {
         }
     }
 };
-xmlhttp.open("GET", "../php/product_getter.php", true);
-xmlhttp.send();
 
 function removeAllProducts() {
     var products = document.getElementById('myProducts');
@@ -44,3 +42,17 @@ function searchProduct() {
     xmlhttp.open("GET", "../php/product_getter.php?method=search&query=" + searchValue, true);
     xmlhttp.send();
 }
+
+var input = document.getElementById("searchValue");
+
+input.addEventListener("keyup", function(event) {
+
+    event.preventDefault();
+
+    if (event.keyCode === 13) {
+        searchProduct();
+    }
+});
+
+xmlhttp.open("GET", "../php/product_getter.php", true);
+xmlhttp.send();
