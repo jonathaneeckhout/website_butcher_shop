@@ -12,17 +12,20 @@
 </head>
 <body>
     <header>
-        <div class="topNav">
+        <div class="topNav" id="myTopnav">
             <div class="topNavLeft">
-                <a href="index.php">
+                <a id="logo" href="index.php">
                     <img src="images/butcher_shop_logo.png" alt="logo">
                 </a>
             </div>
-            <div class="topNavRight">
+            <div class="topNavRight ">
                 <a href="index.php">Home</a>
                 <a href="html/services.php">Services</a>
                 <a href="html/products.php">Products</a>
                 <a href="admin/index.php">Login</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
             </div>
         </div>
     </header>
@@ -53,25 +56,18 @@
                 <div class="newsTopics">
                     <h2>News</h2>
                     <ul>
-
-
-                    <?php
-                    try {
-                        $stmt = $db->query('SELECT postID, postTitle FROM butcher_shop_posts ORDER BY postID DESC');
-                        while($row = $stmt->fetch()){
-                            echo '<li>'.$row['postTitle'].'</li>';
+                        <?php
+                        try {
+                            $stmt = $db->query('SELECT postID, postTitle FROM butcher_shop_posts ORDER BY postID DESC');
+                            while($row = $stmt->fetch()){
+                                echo '<li>'.$row['postTitle'].'</li>';
+                            }
+                        } catch(PDOException $e) {
+                            echo $e->getMessage();
                         }
-                    } catch(PDOException $e) {
-                        echo $e->getMessage();
-                    }
-                    ?>
+                        ?>
                     </ul>
                 </div>
-
-                <!-- <div class="newsTopics">
-                    <h2>Posts</h2>
-                    <p>The meat is realy jucy, I am comming back for sure!</p>
-                </div> -->
             </div>
         </div>
     </div>
@@ -83,6 +79,16 @@
         </p>
     </footer>
 
-    <!-- <script type = "text/javascript" src = "js/get_posts_index.js" ></script> -->
+    <script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topNav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topNav";
+        }
+    }
+</script>
+
 </body>
 </html>
