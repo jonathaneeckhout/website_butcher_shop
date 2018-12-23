@@ -30,3 +30,14 @@ xmlhttp.onreadystatechange = function() {
 };
 xmlhttp.open("GET", "../php/product_getter.php", true);
 xmlhttp.send();
+
+function removeAllProducts() {
+    var products = document.getElementById('myProducts');
+    while (products.firstChild) {
+        products.removeChild(products.firstChild);
+    }
+}
+
+function searchProduct() {
+    removeAllProducts();
+}

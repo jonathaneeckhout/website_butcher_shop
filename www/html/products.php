@@ -34,10 +34,8 @@
         <div class="indexWrapper" id="productBlob">
             <div class="productSelection">
                 <div class="searchContainer">
-                    <form action="/action_page.php">
-                        <input type="text" placeholder="Search.." name="search">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
+                    <input type="text" placeholder="Search.." name="search">
+                    <button onclick="searchProduct()"><i class="fa fa-search"></i></button>
                 </div>
                 <div class="selection">
                     <h2>Filter products</h2>
@@ -49,7 +47,6 @@
                 </div>
             </div>
             <div class="products" id='myProducts'>
-                 <script src="../js/fetch_products.js"></script>
             </div>
         </div>
     </div>
@@ -71,5 +68,6 @@
         }
     }
     </script>
+    <script src="../js/fetch_products.js"></script>
 </body>
 </html>
