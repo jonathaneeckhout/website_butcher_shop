@@ -34,7 +34,7 @@
         <div class="indexWrapper" id="productBlob">
             <div class="productSelection">
                 <div class="searchContainer">
-                    <input type="text" placeholder="Search.." name="search">
+                    <input id="searchValue" type="text" placeholder="Search.." name="search">
                     <button onclick="searchProduct()"><i class="fa fa-search"></i></button>
                 </div>
                 <div class="selection">

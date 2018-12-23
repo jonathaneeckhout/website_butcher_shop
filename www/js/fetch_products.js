@@ -40,6 +40,7 @@ function removeAllProducts() {
 
 function searchProduct() {
     removeAllProducts();
-    xmlhttp.open("GET", "../php/product_getter.php?method=search&query=chicken", true);
+    var searchValue = document.getElementById('searchValue').value;
+    xmlhttp.open("GET", "../php/product_getter.php?method=search&query=" + searchValue, true);
     xmlhttp.send();
 }
