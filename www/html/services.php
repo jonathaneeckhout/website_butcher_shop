@@ -34,16 +34,15 @@
         <div class="indexWrapper" id="productBlob">
             <div class="productSelection">
                 <div class="searchContainer">
-                        <input id="searchValue" type="text" placeholder="Search.." name="search">
-                        <button onclick="searchService()"><i class="fa fa-search"></i></button>
+                    <input id="searchValue" type="text" placeholder="Search.." name="search">
+                    <button onclick="searchService()"><i class="fa fa-search"></i></button>
                 </div>
                 <div class="selection">
                     <h2>Filter services</h2>
-
-                        <input class="filterField" type="checkbox" name="bbq" value="bbq"> BBQ<br>
-                        <input class="filterField" type="checkbox" name="gourmet" value="gourmet"> Groumet<br>
-                        <input class="filterField" type="checkbox" name="buffet" value="buffet"> Buffet<br>
-                        <button onclick="filterService()">Apply filter</button>
+                    <input class="filterField" type="checkbox" name="bbq" value="bbq"> BBQ<br>
+                    <input class="filterField" type="checkbox" name="gourmet" value="gourmet"> Groumet<br>
+                    <input class="filterField" type="checkbox" name="buffet" value="buffet"> Buffet<br>
+                    <button onclick="filterService()">Apply filter</button>
                 </div>
             </div>
             <div class="products" id='myServices'>
