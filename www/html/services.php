@@ -1,4 +1,3 @@
-<?php require('../includes/config.php'); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -35,36 +34,19 @@
         <div class="indexWrapper" id="productBlob">
             <div class="productSelection">
                 <div class="searchContainer">
-                    <form action="/action_page.php">
-                        <input type="text" placeholder="Search.." name="search">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
+                        <input id="searchValue" type="text" placeholder="Search.." name="search">
+                        <button onclick="searchService()"><i class="fa fa-search"></i></button>
                 </div>
                 <div class="selection">
                     <h2>Filter services</h2>
-                    <form>
-                        <input type="checkbox" name="bbq" value="bbq"> BBQ<br>
-                        <input type="checkbox" name="gourmet" value="gourmet"> Groumet<br>
-                        <input type="checkbox" name="buffet" value="buffet"> Buffet<br>
-                    </form>
+
+                        <input class="filterField" type="checkbox" name="bbq" value="bbq"> BBQ<br>
+                        <input class="filterField" type="checkbox" name="gourmet" value="gourmet"> Groumet<br>
+                        <input class="filterField" type="checkbox" name="buffet" value="buffet"> Buffet<br>
+                        <button onclick="filterService()">Apply filter</button>
                 </div>
             </div>
-            <div class="products">
-                <?php
-                try {
-                    $stmt = $db->query('SELECT serviceID, serviceTitle, serviceType, serviceImage, serviceDesc, serviceCont, servicePrice, servicePriceUnit FROM butcher_shop_services ORDER BY serviceID');
-                    while($row = $stmt->fetch()){
-                        echo '<div class=product>';
-                        echo '<h2>'.$row['serviceTitle'].'</h2>';
-                        echo '<img src="../images/'.$row['serviceImage'].'" alt="">';
-                        echo '<p>'.$row['serviceCont'].'</p>';
-                        echo '<p id="productPrice">'.$row['servicePrice'].' '.$row['servicePriceUnit'].'</p>';
-                        echo '</div>';
-                    }
-                } catch(PDOException $e) {
-                    echo $e->getMessage();
-                }
-                ?>
+            <div class="products" id='myServices'>
             </div>
         </div>
     </div>
@@ -86,5 +68,6 @@
         }
     }
     </script>
+    <script src="../js/fetch_services.js"></script>
 </body>
 </html>
