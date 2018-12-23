@@ -78,7 +78,7 @@
             © 2018 Jonathan Eeckhout
         </p>
     </footer>
-
+    
     <script>
     function myFunction() {
         var x = document.getElementById("myTopnav");
@@ -88,7 +88,7 @@
             x.className = "topNav";
         }
     }
-</script>
+    </script>
 
 </body>
 </html>
