@@ -218,8 +218,14 @@ footer {
     font-size: 17px;
 }
 
-.selection form {
-    padding: 10px 0 0 0;
+.selection .filterField {
+    margin: 10px 0 0 10px;
+}
+
+.selection button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 0 10px 0;
 }
 
 .products {

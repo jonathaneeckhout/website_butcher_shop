@@ -43,6 +43,26 @@ function searchProduct() {
     xmlhttp.send();
 }
 
+function filterProduct() {
+    removeAllProducts();
+    var filterFields = document.getElementsByClassName('filterField');
+    var query = '';
+    var i;
+    var j = 0;
+    for (i = 0; i < filterFields.length; i++) {
+        if(filterFields[i].checked) {
+            if(j == 0) {
+                query = filterFields[i].value;
+            } else {
+                query = query + ',' + filterFields[i].value;
+            }
+            j++;
+        }
+    }
+    xmlhttp.open("GET", "../php/product_getter.php?method=filter&query=" + query, true);
+    xmlhttp.send();
+}
+
 var input = document.getElementById("searchValue");
 
 input.addEventListener("keyup", function(event) {

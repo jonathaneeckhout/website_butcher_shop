@@ -39,11 +39,10 @@
                 </div>
                 <div class="selection">
                     <h2>Filter products</h2>
-                    <form>
-                        <input type="checkbox" name="cow" value="cowMeat"> Cow meat<br>
-                        <input type="checkbox" name="chicken" value="chickenMeat"> Chicken meat<br>
-                        <input type="checkbox" name="pork" value="porkMeat"> Pork meat<br>
-                    </form>
+                    <input class="filterField" type="checkbox" name="cow" value="beef"> Cow meat<br>
+                    <input class="filterField" type="checkbox" name="chicken" value="chicken"> Chicken meat<br>
+                    <input class="filterField" type="checkbox" name="pork" value="pork"> Pork meat<br>
+                    <button onclick="filterProduct()">Apply filter</button>
                 </div>
             </div>
             <div class="products" id='myProducts'>
