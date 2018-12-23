@@ -12,24 +12,27 @@
 </head>
 <body>
     <header>
-        <div class="topNav">
+        <div class="topNav" id="myTopnav">
             <div class="topNavLeft">
-                <a href="../index.php">
+                <a id="logo" href="../index.php">
                     <img src="../images/butcher_shop_logo.png" alt="logo">
                 </a>
             </div>
-            <div class="topNavRight">
+            <div class="topNavRight ">
                 <a href="../index.php">Home</a>
                 <a href="services.php">Services</a>
                 <a href="products.php">Products</a>
                 <a href="../admin/index.php">Login</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
             </div>
         </div>
     </header>
     <div class="headerLine"></div>
 
     <div class="wrapper">
-        <div class="indexWrapper">
+        <div class="indexWrapper" id="productBlob">
             <div class="productSelection">
                 <div class="searchContainer">
                     <form action="/action_page.php">
@@ -73,6 +76,15 @@
         </p>
     </footer>
 
-    <!-- <script type = "text/javascript" src = "js/get_posts_index.js" ></script> -->
+    <script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topNav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topNav";
+        }
+    }
+    </script>
 </body>
 </html>
