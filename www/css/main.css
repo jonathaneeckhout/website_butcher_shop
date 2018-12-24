@@ -289,9 +289,10 @@ footer {
     .topNav a {
         font-weight: bold;;
         float: none;
-        padding: 0;
+        padding: 10px 0 10px 0;
         text-align: center;
         display: block;
+        font-size: 50px;
     }
     .topNavRight {
         float: none;
@@ -331,11 +332,11 @@ footer {
     }
 
     .news {
-        margin: 20px 0px 0px 0px;
+        margin: 50px 0px 0px 0px;
     }
 
     .newsTopics {
-    margin: 20px 0 0 0;
+    margin: 50px 0 0 0;
     }
 
     #productBlob {
