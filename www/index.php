@@ -47,7 +47,8 @@
                             echo '</div>';
                         }
                     } catch(PDOException $e) {
-                        echo $e->getMessage();
+                        //echo $e->getMessage();
+                        echo "Error";
                     }
                     ?>
                 </div>
