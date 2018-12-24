@@ -63,7 +63,8 @@
                                 echo '<li>'.$row['postTitle'].'</li>';
                             }
                         } catch(PDOException $e) {
-                            echo $e->getMessage();
+                            // echo $e->getMessage();
+                            echo "Error";
                         }
                         ?>
                     </ul>
@@ -78,7 +79,7 @@
             © 2018 Jonathan Eeckhout
         </p>
     </footer>
-    
+
     <script>
     function myFunction() {
         var x = document.getElementById("myTopnav");

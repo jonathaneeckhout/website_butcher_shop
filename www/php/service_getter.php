@@ -31,7 +31,8 @@ if ($_GET["method"] == '') {
             array_push($myResult, $myObj);
         }
     } catch(PDOException $e) {
-        echo $e->getMessage();
+        //echo $e->getMessage();
+        echo "Error";
     }
 } elseif ($_GET["method"] == 'search') {
     try {
@@ -62,7 +63,8 @@ if ($_GET["method"] == '') {
             array_push($myResult, $myObj);
         }
     } catch(PDOException $e) {
-        echo $e->getMessage();
+        //echo $e->getMessage();
+        echo "Error";
     }
 
 } elseif ($_GET["method"] == 'filter') {
@@ -103,7 +105,8 @@ if ($_GET["method"] == '') {
             array_push($myResult, $myObj);
         }
     } catch(PDOException $e) {
-        echo $e->getMessage();
+        //echo $e->getMessage();
+        echo "Error";
     }
 }
 
